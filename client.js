@@ -1,4 +1,4 @@
-let soc = new WebSocket("ws://localhost:3000");
+let soc = new WebSocket("wss://chat-xmta.onrender.com");
 
 const texto = document.querySelector(".texto")
 const botao = document.querySelector(".botao")
