@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(122, 122, 122);
+}
+.texto {
+    resize: none;
+    width: 90%;
+    border-radius: 10px;
+}
+.nome {
+    resize: none;
+    width: 10%;
+    border-radius: 10px;
+}
+button {
+    border-radius: 25%;
+    width: 100px;
+    height: 100px;
+}

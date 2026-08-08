@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "ws": "^8.21.2"
+  },
+  "name": "joao",
+  "version": "1.0.0",
+  "description": "servido",
+  "main": "server.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
