@@ -6,14 +6,29 @@ body {
     width: 90%;
     border-radius: 10px;
     background-color: rgb(206, 206, 206);
+    font-size: large;
+    font-family: sans-serif;
 }
 .nome {
     resize: none;
     width: 10%;
     border-radius: 10px;
+    background-color: rgb(206, 206, 206);
+    font-size: large;
+    font-family: sans-serif;
 }
-button {
+.botao {
     border-radius: 25%;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
+    font-size: large;
+    font-family: sans-serif;
+}
+.imagem {
+    position: absolute;
+    border-radius: 25%;
+    width: 75px;
+    height: 75px;
+    font-size: medium;
+    font-family: sans-serif;
 }

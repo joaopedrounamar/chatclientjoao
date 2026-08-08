@@ -9,3 +9,12 @@
     font-size: x-large;
     color: red;
 }
+
+.mensagem {
+    font-family: sans-serif;
+}
+
+img {
+   width: 300px;
+   height: 300px;
+}

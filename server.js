@@ -8,11 +8,26 @@ serv.on("connection", (socket) => {
     socket.send(mensagem)
     }}
     socket.on("message", (mensagem) => {
-        let mensagensemjson = JSON.parse(mensagem)
-        ultimamensagem.push(mensagensemjson.nome + ": " + mensagensemjson.texto)
+        let ejson = false
+        let mensagemsemjson
+        try {
+        mensagensemjson = JSON.parse(mensagem)
+        ejson = true
+        }
+        catch {}
+        console.log(mensagem)
+        if (ejson) {
+        ultimamensagem.push(JSON.stringify({nome: mensagensemjson.nome, texto: mensagensemjson.texto}))
         serv.clients.forEach((client) => {
-        let mensagemaenviar = mensagensemjson.nome + ": " + mensagensemjson.texto
+        let mensagemaenviar = JSON.stringify({nome: mensagensemjson.nome, texto: mensagensemjson.texto})
+        console.log(mensagemaenviar)
         client.send(mensagemaenviar)
         })
-    })
-})
+    }
+    else {
+        ultimamensagem.push(mensagem)
+        serv.clients.forEach((client) => {
+        let mensagemaenviar = mensagem
+        client.send(mensagemaenviar)
+    })}
+})})
