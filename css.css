@@ -5,6 +5,7 @@ body {
     resize: none;
     width: 90%;
     border-radius: 10px;
+    background-color: rgb(206, 206, 206);
 }
 .nome {
     resize: none;
