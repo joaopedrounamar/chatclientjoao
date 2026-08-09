@@ -89,8 +89,12 @@ soc.onmessage = (mensage) => {
     
     if (ejson) {
     let texto = document.createElement("h2")
+    let textonome = document.createElement("h2")
+    textonome.textContent = mensagemsemjson.nome + ":"
+    textonome.className = "nomemensagem"
     texto.className = "mensagem"
-    texto.textContent = mensagemsemjson.nome + ":" + mensagemsemjson.texto
+    texto.textContent = mensagemsemjson.texto
+    div.appendChild(textonome)
     div.appendChild(texto)
     div.scrollTop = div.scrollHeight
     console.log(mensagemsemjson)
