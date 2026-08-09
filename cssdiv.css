@@ -6,12 +6,15 @@
 }
 
 .error {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: bolder;
     font-size: x-large;
     color: red;
 }
 
 .mensagem {
-    font-family: sans-serif;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: bolder;
 }
 
 img {

@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Fredoka:wght@300..700&display=swap');
 body {
     background-color: rgb(122, 122, 122);
 }
 .texto {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: bolder;
     resize: none;
     width: 90%;
     border-radius: 10px;
@@ -10,25 +13,38 @@ body {
     font-family: sans-serif;
 }
 .nome {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: bolder;
     resize: none;
     width: 10%;
     border-radius: 10px;
     background-color: rgb(206, 206, 206);
     font-size: large;
-    font-family: sans-serif;
 }
 .botao {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: bolder;
     border-radius: 25%;
     width: 75px;
     height: 75px;
     font-size: large;
-    font-family: sans-serif;
 }
 .imagem {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: bolder;
     position: absolute;
     border-radius: 25%;
     width: 75px;
     height: 75px;
-    font-size: medium;
-    font-family: sans-serif;
+    font-size: smaller;
+}
+h1 {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: bolder;
+}
+.a {
+    color: cyan;
+}
+.b {
+    color: rgb(0, 174, 255);
 }
