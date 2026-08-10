@@ -1,3 +1,5 @@
+
+
 let soc = new WebSocket("wss://chat-xmta.onrender.com");
 
 const texto = document.querySelector(".texto")
@@ -7,13 +9,23 @@ const mensagem = document.querySelector(".mensage")
 const div = document.querySelector(".div")
 const nome = document.querySelector(".nome")
 const input = document.querySelector(".inputtambem")
+const som = new Audio("efeito.mp3")
+const salvar = document.querySelector(".salvar")
+let nomeval = localStorage.getItem("nome")
+som.volume = 0.5
+let tempo = 0
 soc.onopen = () => {
     console.log("olha, conecto aq")
+}
+
+if (nome !== null) {
+    nome.value = nomeval
 }
 
 document.addEventListener("keydown", async (info) => {
     if (info.key === "Enter") {
         info.preventDefault()
+        if (performance.now() - tempo >= 200 && texto.value != "") {
     let podemandar = true
     if (soc.readyState !== 1) {
         let texto = document.createElement("h4")
@@ -40,7 +52,8 @@ document.addEventListener("keydown", async (info) => {
     else {
     soc.send(JSON.stringify({texto: texto.value, nome: nome.value}))
     texto.value = ""
-    }}
+    tempo = performance.now()
+    }}}
 }})
 
 imagem.addEventListener("click", () => {
@@ -48,6 +61,7 @@ imagem.addEventListener("click", () => {
 })
 
 botao.addEventListener("click", async () => {
+    if (performance.now() - tempo >= 200 && texto.value != "") {
     let podemandar = true
     if (soc.readyState !== 1) {
         let texto = document.createElement("h4")
@@ -73,7 +87,7 @@ botao.addEventListener("click", async () => {
     else {
     soc.send(JSON.stringify({texto: texto.value, nome: nome.value}))
     texto.value = ""
-    }}
+    }}}
 })
 
 soc.onmessage = (mensage) => {
@@ -86,7 +100,13 @@ soc.onmessage = (mensage) => {
     catch {
 
     }
-    
+    if (document.hidden) {
+        som.pause
+        som.currentTime = 0
+        som.play()
+    }
+
+
     if (ejson) {
     let texto = document.createElement("h2")
     let textonome = document.createElement("h2")
@@ -106,3 +126,7 @@ else {
     div.appendChild(imagem)
 }
 }
+
+salvar.addEventListener("click", () => {
+localStorage.setItem("nome", nome.value)
+})
